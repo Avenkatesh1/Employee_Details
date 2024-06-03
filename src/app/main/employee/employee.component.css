@@ -1,0 +1,7 @@
+.empControls{
+    width: 100%;
+    padding: 15%;
+}
+.empControls >*{
+    width: 100%;
+}
