@@ -20,5 +20,9 @@ export class EmployeeComponent {
      {id:1, name:'Material UI'},
      {id:1, name:'React.js'},
   ]
-
+  
+  onClear(){
+    this.emp.form.reset();
+    this.emp.initializeFormGroup();
+  }
 }

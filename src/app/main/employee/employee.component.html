@@ -6,16 +6,23 @@
                 <mat-form-field appearance="outline">
                     <mat-label>Full Name:</mat-label>
                     <input matInput formControlName="fullName" required>
+                    <mat-error>This Field is Required</mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Email:</mat-label>
-                    <input matInput formControlName="email" required >
+                    <input matInput formControlName="email" required>
+                    <mat-error>Invalid Email...</mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Mobile No:</mat-label>
-                    <input matInput formControlName="mobile" required >
+                    <input matInput formControlName="mobile" required>
+                    @if (emp.form.controls['mobile'].errors?.['required']) {
+                        <mat-error>This Field is Required</mat-error>
+                    }@else {
+                        <mat-error>Minimum 10 charecters Required</mat-error>
+                    }
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
@@ -52,8 +59,8 @@
                     <mat-checkbox  formControlName="isPermanent"> Peramanent Employee</mat-checkbox>
                 </section>
                 <div class="myButtons">
-                    <button mat-raised-button color="primary" type="submit">Submit</button>
-                    <button mat-raised-button color="warn">Cancel</button>
+                    <button mat-raised-button color="primary" [disabled]="emp.form.invalid" type="submit">Submit</button>
+                    <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
                 </div>
             </div>          
         </mat-grid-tile>
