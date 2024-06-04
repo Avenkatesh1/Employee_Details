@@ -5,3 +5,6 @@
 .empControls >*{
     width: 100%;
 }
+.myButtons button{
+    margin: 5px;
+}
