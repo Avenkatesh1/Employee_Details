@@ -3,11 +3,6 @@
         <mat-grid-tile>
             <div class="empControls">
                 <input type="hidden" formControlName="$key">
-                <mat-form-field >
-                    <mat-label>Full Name:</mat-label>
-                    <input matInput placeholder="Placeholder" formControlName="fullName">
-                  </mat-form-field>
-                <!-- <input type="hidden" formControlName="$key">
                 <mat-form-field appearance="outline">
                     <mat-label>Full Name:</mat-label>
                     <input matInput formControlName="fullName" >
@@ -26,10 +21,21 @@
                 <mat-form-field appearance="outline">
                     <mat-label>City:</mat-label>
                     <input matInput formControlName="city" >
-                </mat-form-field> -->
+                </mat-form-field>
             </div>
         </mat-grid-tile>
-        <mat-grid-tile>2</mat-grid-tile>
+        <mat-grid-tile>
+            <div class="empControls">
+                <div class="myPadding">
+                    <mat-radio-group formControlName="gender">
+                        <mat-label>Gender:</mat-label>
+                        <mat-radio-button value="1">Male</mat-radio-button>
+                        <mat-radio-button value="2">Female</mat-radio-button>
+                        <mat-radio-button value="3">Others</mat-radio-button>
+                      </mat-radio-group>
+                </div>
+            </div>          
+        </mat-grid-tile>
     </mat-grid-list>
 </form>
 
