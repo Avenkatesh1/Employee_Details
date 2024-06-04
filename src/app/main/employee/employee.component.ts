@@ -12,5 +12,13 @@ import { EmployeeService } from '../../shered/employee.service';
 })
 export class EmployeeComponent {
   constructor( public emp:EmployeeService){}
+  department= [
+     {id:1, name:'Angualr'},
+     {id:1, name:'JavaScript'},
+     {id:1, name:'Bootstrap'},
+     {id:1, name:'Node.js'},
+     {id:1, name:'Material UI'},
+     {id:1, name:'React.js'},
+  ]
 
 }

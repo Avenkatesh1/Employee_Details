@@ -5,17 +5,17 @@
                 <input type="hidden" formControlName="$key">
                 <mat-form-field appearance="outline">
                     <mat-label>Full Name:</mat-label>
-                    <input matInput formControlName="fullName" >
+                    <input matInput formControlName="fullName" required>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Email:</mat-label>
-                    <input matInput formControlName="email" >
+                    <input matInput formControlName="email" required >
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Mobile No:</mat-label>
-                    <input matInput formControlName="mobile" >
+                    <input matInput formControlName="mobile" required >
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
@@ -33,6 +33,27 @@
                         <mat-radio-button value="2">Female</mat-radio-button>
                         <mat-radio-button value="3">Others</mat-radio-button>
                       </mat-radio-group>
+                </div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Department:</mat-label>
+                    <mat-select formControlName="department">
+                        @for (item of department; track $index) {
+                        <mat-option id="item.id">{{item.name}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Hire_Date:</mat-label>
+                    <input matInput formControlName="hireDate" placeholder="HireDate" [matDatepicker]="picker">
+                    <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <section class="example-section">
+                    <mat-checkbox  formControlName="isPermanent"> Peramanent Employee</mat-checkbox>
+                </section>
+                <div class="myButtons">
+                    <button mat-raised-button color="primary" type="submit">Submit</button>
+                    <button mat-raised-button color="warn">Cancel</button>
                 </div>
             </div>          
         </mat-grid-tile>
