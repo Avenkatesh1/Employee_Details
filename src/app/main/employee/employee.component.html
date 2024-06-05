@@ -5,7 +5,7 @@
                 <input type="hidden" formControlName="$key">
                 <mat-form-field appearance="outline">
                     <mat-label>Full Name:</mat-label>
-                    <input matInput formControlName="fullName" required>
+                    <input matInput formControlName="fullName">
                     <mat-error>This Field is Required</mat-error>
                 </mat-form-field>
 
@@ -17,7 +17,7 @@
 
                 <mat-form-field appearance="outline">
                     <mat-label>Mobile No:</mat-label>
-                    <input matInput formControlName="mobile" required>
+                    <input matInput formControlName="mobile">
                     @if (emp.form.controls['mobile'].errors?.['required']) {
                         <mat-error>This Field is Required</mat-error>
                     }@else {
